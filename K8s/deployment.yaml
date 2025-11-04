@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: website
-        image: <your-acr-name>.azurecr.io/bhanwarsheva-website:v1
+        image: rajatacr.azurecr.io/bhanwarsheva-website:v1
         ports:
         - containerPort: 80
         resources:
