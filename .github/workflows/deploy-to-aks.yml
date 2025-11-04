@@ -10,9 +10,9 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_RESOURCE_GROUP: bhanwarsheva-rg
-  AKS_CLUSTER_NAME: bhanwarsheva-aks
-  ACR_NAME: bhanwarshevaacr
+  AZURE_RESOURCE_GROUP: newrg
+  AKS_CLUSTER_NAME: aksnew
+  ACR_NAME: rajatacr
   IMAGE_NAME: bhanwarsheva-website
   DEPLOYMENT_NAME: bhanwarsheva-website
 
