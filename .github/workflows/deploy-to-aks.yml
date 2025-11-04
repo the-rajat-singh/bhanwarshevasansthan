@@ -39,7 +39,7 @@ jobs:
     - name: Build and Push Docker Image
       run: |
         docker build -t rajatacr.azurecr.io/${{ env.IMAGE_NAME }}:${{ github.sha }} .
-        docker build -t rajatacr.azurecr.io/${{ env.IMAGE_NAME }}:latest .
+        docker tag rajatacr.azurecr.io/${{ env.IMAGE_NAME }}:${{ github.sha }} rajatacr.azurecr.io/${{ env.IMAGE_NAME }}:latest
         docker push rajatacr.azurecr.io/${{ env.IMAGE_NAME }}:${{ github.sha }}
         docker push rajatacr.azurecr.io/${{ env.IMAGE_NAME }}:latest
 
