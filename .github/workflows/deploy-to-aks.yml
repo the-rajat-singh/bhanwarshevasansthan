@@ -38,10 +38,10 @@ jobs:
 
     - name: Build and Push Docker Image
       run: |
-        docker build -t ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:${{ github.sha }} .
-        docker build -t ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:latest .
-        docker push ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:${{ github.sha }}
-        docker push ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:latest
+        docker build -t rajatacr.azurecr.io/${{ env.IMAGE_NAME }}:${{ github.sha }} .
+        docker build -t rajatacr.azurecr.io/${{ env.IMAGE_NAME }}:latest .
+        docker push rajatacr.azurecr.io/${{ env.IMAGE_NAME }}:${{ github.sha }}
+        docker push rajatacr.azurecr.io/${{ env.IMAGE_NAME }}:latest
 
     - name: Set AKS Context
       uses: azure/aks-set-context@v3
@@ -56,7 +56,7 @@ jobs:
           k8s/deployment.yaml
           k8s/service.yaml
         images: |
-          ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:${{ github.sha }}
+          rajatacr.azurecr.io/${{ env.IMAGE_NAME }}:${{ github.sha }}
         namespace: default
 
     - name: Verify Deployment
